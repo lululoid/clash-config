@@ -1,3 +1,4 @@
+# PRIVATE CONFIG
 # Port of HTTP(S) proxy server on the local end
 port: 7890
 
