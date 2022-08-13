@@ -1,0 +1,118 @@
+proxies:
+  # Shadowsocks
+  # The supported ciphers (encryption methods):
+  #   aes-128-gcm aes-192-gcm aes-256-gcm
+  #   aes-128-cfb aes-192-cfb aes-256-cfb
+  #   aes-128-ctr aes-192-ctr aes-256-ctr
+  #   rc4-md5 chacha20-ietf xchacha20
+  #   chacha20-ietf-poly1305 xchacha20-ietf-poly1305
+  
+  # vmess
+  # cipher support auto/aes-128-gcm/chacha20-poly1305/none
+  - name: "sg3 sshkit 08-30"
+    type: vmess
+    server: 104.22.25.131
+    port: 80
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    # udp: true
+    # tls: true
+    # skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/62e62a261be0e/
+      headers:
+        Host: sg3-v2ray.sshkit.org
+    #   max-early-data: 2048
+    #   early-data-header-name: Sec-WebSocket-Protocol
+
+  - name: "sg1 sshkit 09-11"
+    type: vmess
+    server: 104.22.25.131
+    port: 80
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    # udp: true
+    # tls: true
+    # skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/62f6380a55464/
+      headers:
+        Host: sg1-v2ray.sshkit.org
+    #   max-early-data: 2048
+    #   early-data-header-name: Sec-WebSocket-Protocol  
+    
+  - name: "sg3 sshkit 08-30 xl"
+    type: vmess
+    server: sg3-v2ray.sshkit.org
+    port: 443
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    # skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/62e62a261be0e/
+      headers:
+        Host: career.ruangguru.com
+        Upgrade: websocket
+        Connection: keep-alive
+    #   max-early-data: 2048
+        early-data-header-name: Sec-WebSocket-Protocol
+    
+  - name: "opentunnel 18 Agustus"
+    type: vmess
+    server: 104.22.25.131
+    port: 80
+    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
+    alterId: 16
+    cipher: auto
+    udp: true
+    # tls: true
+    # skip-cert-verify: true
+    servername: sgv-5.openv2ray.com # priority over wss host
+    network: ws
+    ws-opts:
+      path: /opentunnel?user=opentunnel.net-realive/
+      headers:
+        Host: sgv-5.openv2ray.com
+    #   max-early-data: 2048
+    #   early-data-header-name: Sec-WebSocket-Protocol
+
+  - name: opentunnel.net-7d
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
+    # sni: idv-3.openv2ray.com
+    alterId: 16
+    cipher: auto
+    # skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: /opentunnel?user=opentunnel.net-7d
+      headers:
+        Host: idv-3.openv2ray.com
+    
+  - name: "Sshmax 31-8"
+    server: id-ss.sshmax.xyz
+    port: 8388
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: ZmJhYzRm
+    udp: true
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: career.ruangguru.com
+      headers:
+        Upgrade: websocket
