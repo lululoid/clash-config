@@ -235,9 +235,9 @@ proxies:
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
     cipher: auto
-    tls: false
+    # tls: false
     skip-cert-verify: true
-    # servername: sg4-v2ray.sshkit.org
+    servername: sg4-v2ray.sshkit.org
     network: ws
     ws-opts:
       path: /sshkit/1678781623/62f78883cc2a8/
