@@ -304,9 +304,11 @@ proxy-groups:
         
 rule-providers:
   reject:
-    type: file
+    type: http
     behavior: domain
-    path: /reject.yaml
+    url: "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
       
 rules:
   - DOMAIN-SUFFIX,google.com,sshkit-sg
