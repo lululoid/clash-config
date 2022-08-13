@@ -275,7 +275,6 @@ proxies:
       host: career.ruangguru.com
       headers:
         Upgrade: websocket
-    udp: true 
         
 proxy-groups:
   - name: sshkit-sg
