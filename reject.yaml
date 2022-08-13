@@ -1,10 +1,10 @@
 payload:
   # custom domain
-  - '+adtago.s3.amazonaws.com'
-  - 'analyticsengine.s3.amazonaws.com'
-  - 'advice-ads.s3.amazonaws.com'
-  - 'affiliationjs.s3.amazonaws.com'
-  - 'advertising-api-eu.amazon.com'
+  - '+.adtago.s3.amazonaws.com'
+  - '+.analyticsengine.s3.amazonaws.com'
+  - '+.advice-ads.s3.amazonaws.com'
+  - '+.affiliationjs.s3.amazonaws.com'
+  - '+.advertising-api-eu.amazon.com'
 
   - '+.0.code.cotsta.ru'
   - '+.0.nextyourcontent.com'
