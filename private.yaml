@@ -334,14 +334,15 @@ rule-providers:
     path: /reject.yaml
       
 rules:
-  - DOMAIN-SUFFIX,google.com,REJECT
-  - DOMAIN-KEYWORD,google,REJECT
+  - RULE-SET,reject,REJECT
+  - DOMAIN-SUFFIX,google.com,sshkit-sg
+  - DOMAIN-KEYWORD,google,sshkit-sg
   - DOMAIN,google.com,REJECT
   - DOMAIN-SUFFIX,ad.com,REJECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)
   - IP-CIDR,127.0.0.0/8,DIRECT
   - GEOIP,CN,DIRECT
-  - DST-PORT,80,REJECT
-  - SRC-PORT,7777,REJECT
-  - MATCH,REJECT
+  - DST-PORT,80,sshkit-sg
+  - SRC-PORT,7777,sshkit-sg
+  - MATCH,sshkit-sg
