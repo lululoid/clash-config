@@ -335,6 +335,11 @@ rule-providers:
       
 rules:
   - RULE-SET,reject,REJECT
+  - DOMAIN-SUFFIX,sentry-cdn.com,REJECT
+  - DOMAIN,ads.google.com,REJECT
+  - DOMAIN-SUFFIX,amazonaws.com,REJECT
+  - DOMAIN-SUFFIX,bugsnag.com,REJECT
+  - DOMAIN,ads-api.twitter.com,REJECT
   - DOMAIN-SUFFIX,google.com,sshkit-sg
   - DOMAIN-KEYWORD,google,sshkit-sg
   - DOMAIN,google.com,REJECT
