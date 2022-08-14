@@ -333,9 +333,17 @@ rule-providers:
     url: "https://raw.githubusercontent.com/lululoid/clash-config/main/reject.yaml"
     path: ./ruleset/reject.yaml
     interval: 86400
+    
+  apps:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/reject.yaml"
+    path: ./ruleset/reject.yaml
+    interval: 86400
       
 rules:
   - RULE-SET,reject,REJECT
+  - RULE-SET,apps,sshkit-sg
   - DOMAIN-SUFFIX,google.com,sshkit-sg
   - DOMAIN-KEYWORD,google,sshkit-sg
   - DOMAIN,google.com,REJECT
