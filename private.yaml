@@ -383,5 +383,5 @@ rules:
   - DST-PORT,80,sshstores
   - SRC-PORT,7777,sshkit-sg
   - SRC-PORT,7777,sshstores
-  - MATCH,sshkit-sg
   - MATCH,sshstores
+  - MATCH,sshkit-sg
