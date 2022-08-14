@@ -260,7 +260,7 @@ proxies:
     cipher: auto
     # tls: false
     skip-cert-verify: true
-    servername: sg.vmess5.xservs.xyz
+    # servername: sg.vmess5.xservs.xyz
     network: ws
     ws-opts:
       path: /vmess
