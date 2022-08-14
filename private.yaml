@@ -337,7 +337,7 @@ rule-providers:
   apps:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/reject.yaml"
+    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/apps.txt"
     path: ./ruleset/reject.yaml
     interval: 86400
       
