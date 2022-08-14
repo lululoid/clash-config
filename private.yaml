@@ -318,7 +318,7 @@ proxies:
         Upgrade: websocket
         
 proxy-groups:
-  - name: sshkit-sg
+  - name: vmess
     type: url-test
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
@@ -327,12 +327,6 @@ proxy-groups:
       - "sg3 sshkit 08-30"
       - "sg1 sshkit 09-11"
       - "sg4-sshkit 12 sep"
-      
-  - name: sshstores
-    type: url-test
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300
-    proxies:
       - Erwin-21-8
       
   - name: opentunnel-sg
@@ -367,21 +361,15 @@ rule-providers:
       
 rules:
   - RULE-SET,reject,REJECT
-  - RULE-SET,apps,sshkit-sg
-  - RULE-SET,apps,sshstores
-  - DOMAIN-SUFFIX,google.com,sshkit-sg
-  - DOMAIN-SUFFIX,google.com,sshstores
-  - DOMAIN-KEYWORD,google,sshkit-sg
-  - DOMAIN-KEYWORD,google,sshstores
+  - RULE-SET,apps,vmess
+  - DOMAIN-SUFFIX,google.com,vmess
+  - DOMAIN-KEYWORD,google,vmess
   - DOMAIN,google.com,REJECT
   - DOMAIN-SUFFIX,ad.com,REJECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)
   - IP-CIDR,127.0.0.0/8,DIRECT
   - GEOIP,CN,DIRECT
-  - DST-PORT,80,sshkit-sg
-  - DST-PORT,80,sshstores
-  - SRC-PORT,7777,sshkit-sg
-  - SRC-PORT,7777,sshstores
-  - MATCH,sshstores
-  - MATCH,sshkit-sg
+  - DST-PORT,80,vmess
+  - SRC-PORT,7777,vmess
+  - MATCH,vmess
