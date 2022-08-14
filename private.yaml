@@ -368,8 +368,11 @@ rule-providers:
 rules:
   - RULE-SET,reject,REJECT
   - RULE-SET,apps,sshkit-sg
+  - RULE-SET,apps,sshstores
   - DOMAIN-SUFFIX,google.com,sshkit-sg
+  - DOMAIN-SUFFIX,google.com,sshstores
   - DOMAIN-KEYWORD,google,sshkit-sg
+  - DOMAIN-KEYWORD,google,sshstores
   - DOMAIN,google.com,REJECT
   - DOMAIN-SUFFIX,ad.com,REJECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
@@ -377,5 +380,8 @@ rules:
   - IP-CIDR,127.0.0.0/8,DIRECT
   - GEOIP,CN,DIRECT
   - DST-PORT,80,sshkit-sg
+  - DST-PORT,80,sshstores
   - SRC-PORT,7777,sshkit-sg
+  - SRC-PORT,7777,sshstores
   - MATCH,sshkit-sg
+  - MATCH,sshstores
