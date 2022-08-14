@@ -184,7 +184,7 @@ proxies:
     cipher: auto
     udp: true
     # tls: true
-    skip-cert-verify: true
+    # skip-cert-verify: true
     # servername: example.com # priority over wss host
     network: ws
     ws-opts:
@@ -203,7 +203,7 @@ proxies:
     cipher: auto
     udp: true
     # tls: true
-    skip-cert-verify: true
+    # skip-cert-verify: true
     # servername: example.com # priority over wss host
     network: ws
     ws-opts:
@@ -222,7 +222,7 @@ proxies:
     cipher: auto
     udp: true
     tls: true
-    skip-cert-verify: true
+    # skip-cert-verify: true
     # servername: example.com # priority over wss host
     network: ws
     ws-opts:
@@ -242,7 +242,7 @@ proxies:
     alterId: 0
     cipher: auto
     # tls: false
-    skip-cert-verify: true
+    # skip-cert-verify: true
     servername: sg4-v2ray.sshkit.org
     network: ws
     ws-opts:
@@ -259,7 +259,7 @@ proxies:
     alterId: 0
     cipher: auto
     # tls: false
-    skip-cert-verify: true
+    # skip-cert-verify: true
     # servername: sg.vmess5.xservs.xyz
     network: ws
     ws-opts:
@@ -277,7 +277,7 @@ proxies:
     cipher: auto
     udp: true
     # tls: true
-    skip-cert-verify: true
+    # skip-cert-verify: true
     servername: sgv-5.openv2ray.com # priority over wss host
     network: ws
     ws-opts:
@@ -295,7 +295,7 @@ proxies:
     # sni: idv-3.openv2ray.com
     alterId: 16
     cipher: auto
-    skip-cert-verify: true
+    # skip-cert-verify: true
     udp: true
     network: ws
     ws-opts:
