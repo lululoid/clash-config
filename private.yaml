@@ -94,8 +94,8 @@ dns:
     # - 114.114.114.114
     - 8.8.8.8
     - 1.1.1.1
-    # - 94.140.14.14
-    # - 94.140.15.15
+    - 94.140.14.14
+    - 94.140.15.15
   enhanced-mode: fake-ip # or redir-host (not recommended)
   fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
   # use-hosts: true # lookup hosts and return IP record
@@ -115,9 +115,9 @@ dns:
     - 8.8.8.8 # default value
     - 1.1.1.1
     - https://dns.google/dns-query
-    # - 94.140.14.14
-    # - 94.140.15.15
-    # - tls://dns.adguard-dns.com
+    - 94.140.14.14
+    - 94.140.15.15
+    - tls://dns.adguard-dns.com
     # - tls://dns.rubyfish.cn:853 # DNS over TLS
     - https://1.1.1.1/dns-query # DNS over HTTPS
     # - dhcp://en0 # dns from dhcp
@@ -162,8 +162,6 @@ dns:
   #   'www.baidu.com': '114.114.114.114'
   #   '+.internal.crop.com': '10.0.0.1'
 
-unified-delay: true
-
 proxies:
   # Shadowsocks
   # The supported ciphers (encryption methods):
@@ -184,7 +182,7 @@ proxies:
     cipher: auto
     udp: true
     # tls: true
-    # skip-cert-verify: true
+    skip-cert-verify: true
     # servername: example.com # priority over wss host
     network: ws
     ws-opts:
@@ -203,7 +201,7 @@ proxies:
     cipher: auto
     udp: true
     # tls: true
-    # skip-cert-verify: true
+    skip-cert-verify: true
     # servername: example.com # priority over wss host
     network: ws
     ws-opts:
@@ -222,7 +220,7 @@ proxies:
     cipher: auto
     udp: true
     tls: true
-    # skip-cert-verify: true
+    skip-cert-verify: true
     # servername: example.com # priority over wss host
     network: ws
     ws-opts:
@@ -242,7 +240,7 @@ proxies:
     alterId: 0
     cipher: auto
     # tls: false
-    # skip-cert-verify: true
+    skip-cert-verify: true
     servername: sg4-v2ray.sshkit.org
     network: ws
     ws-opts:
@@ -259,7 +257,7 @@ proxies:
     alterId: 0
     cipher: auto
     # tls: false
-    # skip-cert-verify: true
+    skip-cert-verify: true
     # servername: sg.vmess5.xservs.xyz
     network: ws
     ws-opts:
@@ -277,7 +275,7 @@ proxies:
     cipher: auto
     udp: true
     # tls: true
-    # skip-cert-verify: true
+    skip-cert-verify: true
     servername: sgv-5.openv2ray.com # priority over wss host
     network: ws
     ws-opts:
@@ -295,7 +293,7 @@ proxies:
     # sni: idv-3.openv2ray.com
     alterId: 16
     cipher: auto
-    # skip-cert-verify: true
+    skip-cert-verify: true
     udp: true
     network: ws
     ws-opts:
@@ -323,11 +321,11 @@ proxy-groups:
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
     proxies:
-      - "sg3 sshkit 08-30 xl"
       - "sg3 sshkit 08-30"
       - "sg1 sshkit 09-11"
       - "sg4-sshkit 12 sep"
       - Erwin-21-8
+      - "sg3 sshkit 08-30 xl"
       
   - name: opentunnel-sg
     type: url-test
