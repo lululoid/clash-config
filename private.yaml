@@ -84,7 +84,7 @@ profile:
 # DNS server settings
 # This section is optional. When not present, the DNS server will be disabled.
 dns:
-  enable: true
+  enable: false
   listen: 0.0.0.0:53
   # ipv6: false # when the false, response to AAAA questions will be empty
 
