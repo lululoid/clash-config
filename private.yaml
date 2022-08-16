@@ -208,9 +208,32 @@ proxies:
       path: /sshkit/1678781623/62f6380a55464/
       headers:
         Host: sg1-v2ray.sshkit.org
-    #   max-early-data: 2048
-    #   early-data-header-name: Sec-WebSocket-Protocol  
-    
+        # Upgrade: websocket
+        # Connection: keep-alive
+        # max-early-data: 2048
+        # early-data-header-name: Sec-WebSocket-Protocol
+
+  - name: "sg1 sshkit 09-11 tls"
+    type: vmess
+    server: verifikasi.skillacademy.com
+    port: 443
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/62f6380a55464/
+      headers:
+        Host: sg1-v2ray.sshkit.org
+        # Upgrade: websocket
+        # Connection: keep-alive
+        # max-early-data: 2048
+        early-data-header-name: Sec-WebSocket-Protocol         
+        
   - name: "sg3 sshkit 08-30 xl"
     type: vmess
     server: 104.18.10.39
@@ -229,7 +252,7 @@ proxies:
         Host: sg3-v2ray.sshkit.org
         # Upgrade: websocket
         # Connection: keep-alive
-    #   max-early-data: 2048
+        # max-early-data: 2048
         # early-data-header-name: Sec-WebSocket-Protocol
   
   - name: "sg4-sshkit 12 sep"
