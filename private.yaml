@@ -84,7 +84,7 @@ profile:
 # DNS server settings
 # This section is optional. When not present, the DNS server will be disabled.
 dns:
-  enable: false
+  enable: true
   listen: 0.0.0.0:53
   # ipv6: false # when the false, response to AAAA questions will be empty
 
@@ -94,8 +94,8 @@ dns:
     # - 114.114.114.114
     - 8.8.8.8
     - 1.1.1.1
-    - 94.140.14.14
-    - 94.140.15.15
+    # - 94.140.14.14
+    # - 94.140.15.15
   enhanced-mode: fake-ip # or redir-host (not recommended)
   fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
   # use-hosts: true # lookup hosts and return IP record
@@ -115,9 +115,9 @@ dns:
     - 8.8.8.8 # default value
     - 1.1.1.1
     - https://dns.google/dns-query
-    - 94.140.14.14
-    - 94.140.15.15
-    - tls://dns.adguard-dns.com
+    # - 94.140.14.14
+    # - 94.140.15.15
+    # - tls://dns.adguard-dns.com
     # - tls://dns.rubyfish.cn:853 # DNS over TLS
     - https://1.1.1.1/dns-query # DNS over HTTPS
     # - dhcp://en0 # dns from dhcp
@@ -175,7 +175,7 @@ proxies:
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
   - name: "sg3 sshkit 08-30"
     type: vmess
-    server: 104.18.25.139
+    server: 104.22.25.131
     port: 80
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
@@ -194,7 +194,7 @@ proxies:
 
   - name: "sg1 sshkit 09-11"
     type: vmess
-    server: 104.18.25.139
+    server: 104.22.25.131
     port: 80
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
@@ -215,7 +215,7 @@ proxies:
 
   - name: "sg1 sshkit 09-11 tls"
     type: vmess
-    server: 104.18.25.139
+    server: 104.22.25.131
     port: 443
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
@@ -256,7 +256,7 @@ proxies:
         # early-data-header-name: Sec-WebSocket-Protocol
   
   - name: "sg4-sshkit 12 sep"
-    server: 104.18.25.139
+    server: 104.22.25.131
     port: 80
     type: vmess
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
