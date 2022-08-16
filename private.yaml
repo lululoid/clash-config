@@ -215,7 +215,7 @@ proxies:
 
   - name: "sg1 sshkit 09-11 tls"
     type: vmess
-    server: verifikasi.skillacademy.com
+    server: sg1-v2ray.sshkit.org
     port: 443
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
@@ -228,11 +228,11 @@ proxies:
     ws-opts:
       path: /sshkit/1678781623/62f6380a55464/
       headers:
-        Host: sg1-v2ray.sshkit.org
-        # Upgrade: websocket
-        # Connection: keep-alive
+        Host: verifikasi.skillacademy.com
+        Upgrade: websocket
+        Connection: keep-alive
         # max-early-data: 2048
-        early-data-header-name: Sec-WebSocket-Protocol         
+        # early-data-header-name: Sec-WebSocket-Protocol         
         
   - name: "sg3 sshkit 08-30 xl"
     type: vmess
