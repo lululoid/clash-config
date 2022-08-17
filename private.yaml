@@ -385,7 +385,7 @@ rule-providers:
     type: http
     behavior: domain
     url: "https://raw.githubusercontent.com/lululoid/clash-config/main/porn.txt"
-    path: ./ruleset/reject.yaml
+    path: ./ruleset/porn.yaml
     interval: 86400
       
 rules:
