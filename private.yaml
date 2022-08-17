@@ -384,13 +384,13 @@ rule-providers:
   porn:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/apps.txt"
+    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/porn.txt"
     path: ./ruleset/porn.yaml
     interval: 86400
       
 rules:
   - RULE-SET,reject,REJECT
-  # - RULE-SET,porn,REJECT
+  - RULE-SET,porn,REJECT
   - RULE-SET,apps,vmess
   - DOMAIN-SUFFIX,google.com,vmess
   - DOMAIN-KEYWORD,google,vmess
