@@ -380,6 +380,13 @@ rule-providers:
     url: "https://raw.githubusercontent.com/lululoid/clash-config/main/apps.txt"
     path: ./ruleset/apps.yaml
     interval: 86400
+    
+  porn:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/apps.txt"
+    path: ./ruleset/porn.yaml
+    interval: 86400
       
 rules:
   - RULE-SET,reject,REJECT
