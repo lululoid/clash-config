@@ -387,6 +387,8 @@ rules:
   - RULE-SET,apps,vmess
   - DOMAIN-SUFFIX,google.com,vmess
   - DOMAIN-KEYWORD,google,vmess
+  - DOMAIN-KEYWORD,hentai,REJECT
+  - DOMAIN-KEYWORD,porn,REJECT
   - DOMAIN,google.com,REJECT
   - DOMAIN-SUFFIX,ad.com,REJECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
