@@ -390,6 +390,7 @@ rule-providers:
       
 rules:
   - RULE-SET,reject,REJECT
+  - RULE-SET,porn,REJECT
   - RULE-SET,apps,vmess
   - DOMAIN-SUFFIX,google.com,vmess
   - DOMAIN-KEYWORD,google,vmess
