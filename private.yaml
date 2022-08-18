@@ -1,0 +1,407 @@
+# PRIVATE CONFIG
+# Port of HTTP(S) proxy server on the local end
+port: 7890
+
+# Port of SOCKS5 proxy server on the local end
+socks-port: 7891
+
+# Transparent proxy server port for Linux and macOS (Redirect TCP and TProxy UDP)
+redir-port: 7892
+
+# Transparent proxy server port for Linux (TProxy TCP and TProxy UDP)
+tproxy-port: 7893
+
+# HTTP(S) and SOCKS4(A)/SOCKS5 server on the same port
+mixed-port: 7894
+
+# authentication of local SOCKS5/HTTP(S) server
+# authentication:
+#  - "user1:pass1"
+#  - "user2:pass2"
+
+# Set to true to allow connections to the local-end server from
+# other LAN IP addresses
+allow-lan: true
+
+# This is only applicable when `allow-lan` is `true`
+# '*': bind all IP addresses
+# 192.168.122.11: bind a single IPv4 address
+# "[aaaa::a8aa:ff:fe09:57d8]": bind a single IPv6 address
+bind-address: '*'
+
+# Clash router working mode
+# rule: rule-based packet routing
+# global: all packets will be forwarded to a single endpoint
+# direct: directly forward the packets to the Internet
+mode: rule
+
+# Clash by default prints logs to STDOUT
+# info / warning / error / debug / silent
+log-level: info
+
+# When set to false, resolver won't translate hostnames to IPv6 addresses
+ipv6: false
+
+# RESTful web API listening address
+external-controller: 127.0.0.1:9090
+
+# A relative path to the configuration directory or an absolute path to a
+# directory in which you put some static web resource. Clash core will then
+# serve it at `http://{{external-controller}}/ui`.
+# external-ui: folder
+
+# Secret for the RESTful API (optional)
+# Authenticate by spedifying HTTP header `Authorization: Bearer ${secret}`
+# ALWAYS set a secret if RESTful API is listening on 0.0.0.0
+secret: ""
+
+# Outbound interface name
+# interface-name: en0
+
+# fwmark on Linux only
+# routing-mark: 6666
+
+# Static hosts for DNS server and connection establishment (like /etc/hosts)
+#
+# Wildcard hostnames are supported (e.g. *.clash.dev, *.foo.*.example.com)
+# Non-wildcard domain names have a higher priority than wildcard domain names
+# e.g. foo.example.com > *.example.com > .example.com
+# P.S. +.foo.com equals to .foo.com and foo.com
+# hosts:
+  # '*.clash.dev': 127.0.0.1
+  # '.dev': 127.0.0.1
+  # 'alpha.clash.dev': '::1'
+
+profile:
+  # Store the `select` results in $HOME/.config/clash/.cache
+  # set false If you don't want this behavior
+  # when two different configurations have groups with the same name, the selected values are shared
+  store-selected: false
+
+  # persistence fakeip
+  store-fake-ip: true
+
+# DNS server settings
+# This section is optional. When not present, the DNS server will be disabled.
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  # ipv6: false # when the false, response to AAAA questions will be empty
+
+  # These nameservers are used to resolve the DNS nameserver hostnames below.
+  # Specify IP addresses only
+  default-nameserver:
+    # - 114.114.114.114
+    - 8.8.8.8
+    - 1.1.1.1
+    # - 94.140.14.14
+    # - 94.140.15.15
+  enhanced-mode: fake-ip # or redir-host (not recommended)
+  fake-ip-range: 198.18.0.1/16 # Fake IP addresses pool CIDR
+  # use-hosts: true # lookup hosts and return IP record
+  
+  # Hostnames in this list will not be resolved with fake IPs
+  # i.e. questions to these domain names will always be answered with their
+  # real IP addresses
+  # fake-ip-filter:
+  #   - '*.lan'
+  #   - localhost.ptlogin2.qq.com
+  
+  # Supports UDP, TCP, DoT, DoH. You can specify the port to connect to.
+  # All DNS questions are sent directly to the nameserver, without proxies
+  # involved. Clash answers the DNS question with the first result gathered.
+  nameserver:
+    # - 114.114.114.114 # default value
+    - 8.8.8.8 # default value
+    - 1.1.1.1
+    - https://dns.google/dns-query
+    # - 94.140.14.14
+    # - 94.140.15.15
+    # - tls://dns.adguard-dns.com
+    # - tls://dns.rubyfish.cn:853 # DNS over TLS
+    - https://1.1.1.1/dns-query # DNS over HTTPS
+    # - dhcp://en0 # dns from dhcp
+    # - '8.8.8.8#en0'
+
+  # When `fallback` is present, the DNS server will send concurrent requests
+  # to the servers in this section along with servers in `nameservers`.
+  # The answers from fallback servers are used when the GEOIP country
+  # is not `CN`.
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+  # - tcp://1.1.1.1
+  # - 'tcp://1.1.1.1#en0'
+  # - tcp://94.140.15.15
+  # - tcp://94.140.14.14
+
+  # If IP addresses resolved with servers in `nameservers` are in the specified
+  # subnets below, they are considered invalid and results from `fallback`
+  # servers are used instead.
+  #
+  # IP address resolved with servers in `nameserver` is used when
+  # `fallback-filter.geoip` is true and when GEOIP of the IP address is `CN`.
+  #
+  # If `fallback-filter.geoip` is false, results from `nameserver` nameservers
+  # are always used if not match `fallback-filter.ipcidr`.
+  #
+  # This is a countermeasure against DNS pollution attacks.
+  fallback-filter:
+     geoip: false
+     geoip-code: CN
+  #   ipcidr:
+  #     - 240.0.0.0/4
+  #   domain:
+  #     - '+.google.com'
+  #     - '+.facebook.com'
+  #     - '+.youtube.com'
+  
+  # Lookup domains via specific nameservers
+  # nameserver-policy:
+  #   'www.baidu.com': '114.114.114.114'
+  #   '+.internal.crop.com': '10.0.0.1'
+
+proxies:
+  # Shadowsocks
+  # The supported ciphers (encryption methods):
+  #   aes-128-gcm aes-192-gcm aes-256-gcm
+  #   aes-128-cfb aes-192-cfb aes-256-cfb
+  #   aes-128-ctr aes-192-ctr aes-256-ctr
+  #   rc4-md5 chacha20-ietf xchacha20
+  #   chacha20-ietf-poly1305 xchacha20-ietf-poly1305
+  
+  # vmess
+  # cipher support auto/aes-128-gcm/chacha20-poly1305/none
+  - name: "sg3 sshkit 08-30"
+    type: vmess
+    server: 104.22.25.131
+    port: 80
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    # tls: true
+    skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/62e62a261be0e/
+      headers:
+        Host: sg3-v2ray.sshkit.org
+    #   max-early-data: 2048
+    #   early-data-header-name: Sec-WebSocket-Protocol
+
+  - name: "sg1 sshkit 09-11"
+    type: vmess
+    server: 104.22.25.131
+    port: 80
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    # tls: true
+    skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/62f6380a55464/
+      headers:
+        Host: sg1-v2ray.sshkit.org
+        # Upgrade: websocket
+        # Connection: keep-alive
+        # max-early-data: 2048
+        # early-data-header-name: Sec-WebSocket-Protocol
+
+  - name: "sg1 sshkit 09-11 tls"
+    type: vmess
+    server: 104.22.25.131
+    port: 443
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/62f6380a55464/
+      headers:
+        Host: sg1-v2ray.sshkit.org
+        Upgrade: websocket
+        Connection: keep-alive
+        # max-early-data: 2048
+        # early-data-header-name: Sec-WebSocket-Protocol         
+        
+  - name: "sg3 sshkit 08-30 xl"
+    type: vmess
+    server: 104.18.10.39
+    port: 443
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/62e62a261be0e/
+      headers:
+        Host: sg3-v2ray.sshkit.org
+        # Upgrade: websocket
+        # Connection: keep-alive
+        # max-early-data: 2048
+        # early-data-header-name: Sec-WebSocket-Protocol
+  
+  - name: "sg4-sshkit 12 sep"
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    # tls: false
+    skip-cert-verify: true
+    servername: sg4-v2ray.sshkit.org
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/62f78883cc2a8/
+      headers:
+        Host: sg4-v2ray.sshkit.org
+    udp: true
+
+  - name: Erwin-21-8
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: 7d2209c9-5e3c-4304-bebc-f5f7241432c5
+    alterId: 0
+    cipher: auto
+    # tls: false
+    skip-cert-verify: true
+    # servername: sg.vmess5.xservs.xyz
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: sg.vmess5.xservs.xyz
+    udp: true   
+  
+  - name: "opentunnel 18 Agustus"
+    type: vmess
+    server: 104.22.25.131
+    port: 80
+    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
+    alterId: 16
+    cipher: auto
+    udp: true
+    # tls: true
+    skip-cert-verify: true
+    servername: sgv-5.openv2ray.com # priority over wss host
+    network: ws
+    ws-opts:
+      path: /opentunnel?user=opentunnel.net-realive/
+      headers:
+        Host: sgv-5.openv2ray.com
+    #   max-early-data: 2048
+    #   early-data-header-name: Sec-WebSocket-Protocol
+
+  - name: opentunnel.net-7d
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
+    # sni: idv-3.openv2ray.com
+    alterId: 16
+    cipher: auto
+    skip-cert-verify: true
+    udp: true
+    network: ws
+    ws-opts:
+      path: /opentunnel?user=opentunnel.net-7d
+      headers:
+        Host: idv-3.openv2ray.com
+    
+  - name: "Sshmax 31-8"
+    server: id-ss.sshmax.xyz
+    port: 8388
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: ZmJhYzRm
+    udp: true
+    plugin: obfs
+    plugin-opts:
+      mode: tls
+      host: career.ruangguru.com
+      headers:
+        Upgrade: websocket
+        
+proxy-groups:
+  - name: vmess
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    proxies:
+      - "sg3 sshkit 08-30"
+      - "sg1 sshkit 09-11 tls"
+      - "sg1 sshkit 09-11"
+      - "sg4-sshkit 12 sep"
+      - Erwin-21-8
+      - "sg3 sshkit 08-30 xl"
+      
+  - name: opentunnel-sg
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    proxies:
+      - "opentunnel 18 Agustus"   
+      - opentunnel.net-7d
+      
+  - name: sshmax
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300  
+    proxies:
+      - "Sshmax 31-8"
+        
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/reject.yaml"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+    
+  apps:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/apps.txt"
+    path: ./ruleset/apps.yaml
+    interval: 86400
+    
+  porn:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/porn.txt"
+    path: ./ruleset/porn.yaml
+    interval: 86400
+      
+rules:
+  - RULE-SET,reject,REJECT
+  - RULE-SET,porn,REJECT
+  - RULE-SET,apps,vmess
+  - DOMAIN-SUFFIX,google.com,vmess
+  - DOMAIN-KEYWORD,google,vmess
+  - DOMAIN-KEYWORD,hentai,REJECT
+  - DOMAIN-KEYWORD,porn,REJECT
+  - DOMAIN,google.com,REJECT
+  - DOMAIN-SUFFIX,ad.com,REJECT
+  - SRC-IP-CIDR,192.168.1.201/32,DIRECT
+  # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - GEOIP,CN,DIRECT
+  - DST-PORT,80,vmess
+  - SRC-PORT,7777,vmess
+  - MATCH,vmess
