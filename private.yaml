@@ -369,6 +369,7 @@ proxy-groups:
       - "sg4-sshkit 12 sep"
       - Erwin-21-8
       - "sg3 sshkit 08-30 xl"
+      - sshstore27
       
   - name: opentunnel-sg
     type: url-test
