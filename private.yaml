@@ -290,7 +290,7 @@ proxies:
         Host: sg.vmess5.xservs.xyz
     udp: true
     
-  - name: sshstore27
+  - name: "sshstore27"
     server: 104.22.25.131
     port: 80
     type: vmess
@@ -369,7 +369,7 @@ proxy-groups:
       - "sg4-sshkit 12 sep"
       - Erwin-21-8
       - "sg3 sshkit 08-30 xl"
-      - sshstore27
+      - "sshstore27"
       
   - name: opentunnel-sg
     type: url-test
