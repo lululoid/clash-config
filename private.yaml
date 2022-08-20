@@ -272,6 +272,7 @@ proxies:
         Host: sg4-v2ray.sshkit.org
     udp: true
 
+  # sshstores
   - name: Erwin-21-8
     server: 104.22.25.131
     port: 80
@@ -287,8 +288,26 @@ proxies:
       path: /vmess
       headers:
         Host: sg.vmess5.xservs.xyz
+    udp: true
+    
+  - name: sshstore27
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: 2fc59fb7-62fa-4c56-8d20-3b111541e0e5
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: id.vmess1.xservs.xyz
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: id.vmess1.xservs.xyz
     udp: true   
-  
+
+  # opentunnel  
   - name: "opentunnel 18 Agustus"
     type: vmess
     server: 104.22.25.131
