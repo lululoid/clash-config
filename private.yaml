@@ -211,28 +211,7 @@ proxies:
         # Upgrade: websocket
         # Connection: keep-alive
         # max-early-data: 2048
-        # early-data-header-name: Sec-WebSocket-Protocol
-
-  - name: "sg1 sshkit 09-11 tls"
-    type: vmess
-    server: 104.22.25.131
-    port: 443
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    # servername: example.com # priority over wss host
-    network: ws
-    ws-opts:
-      path: /sshkit/1678781623/62f6380a55464/
-      headers:
-        Host: sg1-v2ray.sshkit.org
-        Upgrade: websocket
-        Connection: keep-alive
-        # max-early-data: 2048
-        # early-data-header-name: Sec-WebSocket-Protocol         
+        # early-data-header-name: Sec-WebSocket-Protocol        
         
   - name: "sg3 sshkit 08-30 xl"
     type: vmess
@@ -273,23 +252,6 @@ proxies:
     udp: true
 
   # sshstores
-  - name: Erwin-21-8
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 7d2209c9-5e3c-4304-bebc-f5f7241432c5
-    alterId: 0
-    cipher: auto
-    # tls: false
-    skip-cert-verify: true
-    # servername: sg.vmess5.xservs.xyz
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: sg.vmess5.xservs.xyz
-    udp: true
-    
   - name: "sshstore27"
     server: 104.22.25.131
     port: 80
@@ -307,56 +269,23 @@ proxies:
         Host: id.vmess1.xservs.xyz
     udp: true   
 
-  # opentunnel  
-  - name: "opentunnel 18 Agustus"
-    type: vmess
+  - name: "August29"
     server: 104.22.25.131
     port: 80
-    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
-    alterId: 16
+    type: vmess
+    uuid: d59e0980-845f-46fb-925a-e11285d693cc
+    alterId: 0
     cipher: auto
-    udp: true
-    # tls: true
+    tls: false
     skip-cert-verify: true
-    servername: sgv-5.openv2ray.com # priority over wss host
+    servername: sg.vmess5.xservs.xyz
     network: ws
     ws-opts:
-      path: /opentunnel?user=opentunnel.net-realive/
+      path: /vmess
       headers:
-        Host: sgv-5.openv2ray.com
-    #   max-early-data: 2048
-    #   early-data-header-name: Sec-WebSocket-Protocol
+        Host: sg.vmess5.xservs.xyz
+    udp: true  
 
-  - name: opentunnel.net-7d
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
-    # sni: idv-3.openv2ray.com
-    alterId: 16
-    cipher: auto
-    skip-cert-verify: true
-    udp: true
-    network: ws
-    ws-opts:
-      path: /opentunnel?user=opentunnel.net-7d
-      headers:
-        Host: idv-3.openv2ray.com
-    
-  - name: "Sshmax 31-8"
-    server: id-ss.sshmax.xyz
-    port: 8388
-    type: ss
-    cipher: chacha20-ietf-poly1305
-    password: ZmJhYzRm
-    udp: true
-    plugin: obfs
-    plugin-opts:
-      mode: tls
-      host: career.ruangguru.com
-      headers:
-        Upgrade: websocket
-        
 proxy-groups:
   - name: vmess
     type: url-test
@@ -364,27 +293,11 @@ proxy-groups:
     interval: 300
     proxies:
       - "sg3 sshkit 08-30"
-      - "sg1 sshkit 09-11 tls"
       - "sg1 sshkit 09-11"
       - "sg4-sshkit 12 sep"
-      - Erwin-21-8
       - "sg3 sshkit 08-30 xl"
       - "sshstore27"
-      
-  - name: opentunnel-sg
-    type: url-test
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300
-    proxies:
-      - "opentunnel 18 Agustus"   
-      - opentunnel.net-7d
-      
-  - name: sshmax
-    type: url-test
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300  
-    proxies:
-      - "Sshmax 31-8"
+      - "August29"
         
 rule-providers:
   reject:
