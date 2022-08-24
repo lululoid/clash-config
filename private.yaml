@@ -295,7 +295,7 @@ proxy-groups:
       - "sg3 sshkit 08-30"
       - "sg1 sshkit 09-11"
       - "sg4-sshkit 12 sep"
-      - "sg3 sshkit 08-30 xl"
+      # - "sg3 sshkit 08-30 xl"
       - "sshstore27"
       - "August29"
         
