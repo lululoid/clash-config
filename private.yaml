@@ -284,7 +284,24 @@ proxies:
       path: /vmess
       headers:
         Host: sg.vmess5.xservs.xyz
-    udp: true  
+    udp: true
+  
+  - name: "2-september"
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: e9d69e4b-4802-45ec-983c-ae14de3c909e
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg.vmess1.xservs.xyz
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: sg.vmess1.xservs.xyz
+    udp: true
 
 proxy-groups:
   - name: vmess
@@ -298,6 +315,7 @@ proxy-groups:
       # - "sg3 sshkit 08-30 xl"
       - "sshstore27"
       - "August29"
+      - "2-september"
         
 rule-providers:
   reject:
