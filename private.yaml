@@ -230,55 +230,37 @@ proxies:
     udp: true
 
   # sshstores
-  - name: "sshstore27"
+  - name: "sshstores 9 9"
     server: 104.22.25.131
     port: 80
-    type: vmess
-    uuid: 2fc59fb7-62fa-4c56-8d20-3b111541e0e5
-    alterId: 0
+    type: vless
+    uuid: 2a58119f-e49d-4091-aeb4-f5416ba66d8a
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: id.vmess1.xservs.xyz
+    servername: sg.vless1.xservs.xyz
     network: ws
     ws-opts:
-      path: /vmess
+      path: /vless
       headers:
-        Host: id.vmess1.xservs.xyz
-    udp: true   
-
-  - name: "August29"
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: d59e0980-845f-46fb-925a-e11285d693cc
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sg.vmess5.xservs.xyz
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: sg.vmess5.xservs.xyz
+        Host: sg.vless1.xservs.xyz
     udp: true
-  
-  - name: "2-september"
+ 
+  - name: "sg3-99"
     server: 104.22.25.131
     port: 80
     type: vmess
-    uuid: e9d69e4b-4802-45ec-983c-ae14de3c909e
+    uuid: 035a5fb7-9537-4c1a-9665-600009bc0b2f
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: sg.vmess1.xservs.xyz
+    # servername: sg.vmess3.xservs.xyz
     network: ws
     ws-opts:
       path: /vmess
       headers:
-        Host: sg.vmess1.xservs.xyz
+        Host: sg.vmess3.xservs.xyz
     udp: true
 
 proxy-groups:
@@ -290,10 +272,7 @@ proxy-groups:
       - "sg3 sshkit 1-10"
       - "sg1 sshkit 09-11"
       - "sg4-sshkit 12 sep"
-      # - "sg3 sshkit 08-30 xl"
-      - "sshstore27"
-      - "August29"
-      - "2-september"
+      - "sg3-99"
         
 rule-providers:
   reject:
