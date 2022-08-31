@@ -287,7 +287,7 @@ proxy-groups:
     url: 'http://www.gstatic.com/generate_204'
     interval: 300
     proxies:
-      - "sg3 sshkit 08-30"
+      - "sg3 sshkit 1-10"
       - "sg1 sshkit 09-11"
       - "sg4-sshkit 12 sep"
       # - "sg3 sshkit 08-30 xl"
