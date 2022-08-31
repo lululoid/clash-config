@@ -173,24 +173,23 @@ proxies:
   
   # vmess
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
-  - name: "sg3 sshkit 08-30"
+  - name: "sg3 sshkit 1-10"
     type: vmess
     server: 104.22.25.131
     port: 80
+    type: vmess
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
     alterId: 0
     cipher: auto
-    udp: true
-    # tls: true
+    tls: false
     skip-cert-verify: true
-    # servername: example.com # priority over wss host
+    # servername: sg3-v2ray.sshkit.org
     network: ws
     ws-opts:
-      path: /sshkit/1678781623/62e62a261be0e/
+      path: /sshkit/1678781623/630f9b9b53c0e/
       headers:
         Host: sg3-v2ray.sshkit.org
-    #   max-early-data: 2048
-    #   early-data-header-name: Sec-WebSocket-Protocol
+    udp: true
 
   - name: "sg1 sshkit 09-11"
     type: vmess
@@ -214,7 +213,22 @@ proxies:
         # early-data-header-name: Sec-WebSocket-Protocol        
         
   - name: "sg3 sshkit 08-30 xl"
+    name: sg3-v2ray.sshkit.org
+    server: sg3-v2ray.sshkit.org
+    port: 80
     type: vmess
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: no.no
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/630f9b9b53c0e/
+      headers:
+        Host: no.no
+    udp: true: vmess
     server: 104.18.10.39
     port: 443
     uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
