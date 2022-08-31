@@ -230,22 +230,6 @@ proxies:
     udp: true
 
   # sshstores
-  - name: "sshstores 9 9"
-    server: 104.22.25.131
-    port: 80
-    type: vless
-    uuid: 2a58119f-e49d-4091-aeb4-f5416ba66d8a
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sg.vless1.xservs.xyz
-    network: ws
-    ws-opts:
-      path: /vless
-      headers:
-        Host: sg.vless1.xservs.xyz
-    udp: true
- 
   - name: "sg3-99"
     server: 104.22.25.131
     port: 80
