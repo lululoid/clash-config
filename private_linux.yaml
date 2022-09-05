@@ -56,7 +56,7 @@ ipv6: false
 # secret: ""
 
 # Outbound interface name
-interface-name: en0
+interface-name: wlp1s0
 
 # fwmark on Linux only
 # routing-mark: 6666
