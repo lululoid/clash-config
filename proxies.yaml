@@ -65,7 +65,7 @@ proxies:
     udp: true
 
   # sshstores
-  - name: Erwinzer0
+  - name: "sg6-sshstores"
     server: sg.vmess6.xservs.xyz
     port: 80
     type: vmess
