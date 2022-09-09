@@ -86,7 +86,7 @@ proxies:
   - name: "sshocean-id5-16-9"
     server: 104.22.25.131
     port: 80
-    type: vmess
+    type: /sshocean
     uuid: 0d76f59e-ac16-4eb1-b556-9ef4297b5df4
     alterId: 0
     cipher: auto
