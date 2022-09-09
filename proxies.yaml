@@ -83,7 +83,7 @@ proxies:
     udp: true
 
   # sshocean
-  - name: "sshocean-id5-16-9"
+  - name: sshocean-erwinzer0
     server: 104.22.25.131
     port: 80
     type: vmess
@@ -92,10 +92,10 @@ proxies:
     cipher: auto
     tls: false
     skip-cert-verify: true
-    # servername: id5.v2rayserv.com
+    servername: id5.v2rayserv.com
     network: ws
     ws-opts:
       path: /sshocean
       headers:
-        Host: id5.securev2ray.com
+        Host: id5.v2rayserv.com
     udp: true
