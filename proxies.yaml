@@ -56,7 +56,7 @@ proxies:
     cipher: auto
     # tls: false
     skip-cert-verify: true
-    servername: sg4-v2ray.sshkit.org
+    # servername: sg4-v2ray.sshkit.org
     network: ws
     ws-opts:
       path: /sshkit/1678781623/62f78883cc2a8/
@@ -65,8 +65,8 @@ proxies:
     udp: true
 
   # sshstores
-  - name: "sg6-sshstores"
-    server: sg.vmess6.xservs.xyz
+  - name: "sg6-sshstores-16-9"
+    server: 104.22.25.131
     port: 80
     type: vmess
     uuid: b92a6fcc-b1b9-48da-be7a-459be747a570
@@ -74,10 +74,28 @@ proxies:
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: probable.bla
+    servername: sg.vmess6.xservs.xyz
     network: ws
     ws-opts:
       path: /vmess
       headers:
-        Host: probable.bla
+        Host: sg.vmess6.xservs.xyz
+    udp: true
+
+  # sshocean
+  - name: "sshocean-id5-16-9"
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: 0d76f59e-ac16-4eb1-b556-9ef4297b5df4
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    # servername: id5.v2rayserv.com
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: id5.v2rayserv.com
     udp: true
