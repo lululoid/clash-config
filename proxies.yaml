@@ -46,23 +46,6 @@ proxies:
         # Connection: keep-alive
         # max-early-data: 2048
         # early-data-header-name: Sec-WebSocket-Protocol
-  
-  - name: "sg4-sshkit 12 sep"
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
-    alterId: 0
-    cipher: auto
-    # tls: false
-    skip-cert-verify: true
-    # servername: sg4-v2ray.sshkit.org
-    network: ws
-    ws-opts:
-      path: /sshkit/1678781623/62f78883cc2a8/
-      headers:
-        Host: sg4-v2ray.sshkit.org
-    udp: true
 
   # sshstores
   - name: "sg6-sshstores-16-9"
