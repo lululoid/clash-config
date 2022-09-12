@@ -82,3 +82,21 @@ proxies:
       headers:
         Host: id5.v2rayserv.com
     udp: true
+
+  - name: sshocean-199
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: c74133bb-0790-475a-9c22-0d94f0d277c2
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg8.v2rayserv.com
+    network: ws
+    ws-opts:
+      path: /sshocean
+      headers:
+        Host: sg8.v2rayserv.com
+    udp: true  
+    
