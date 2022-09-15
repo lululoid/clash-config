@@ -1,0 +1,102 @@
+proxies:
+  # Shadowsocks
+  # The supported ciphers (encryption methods):
+  #   aes-128-gcm aes-192-gcm aes-256-gcm
+  #   aes-128-cfb aes-192-cfb aes-256-cfb
+  #   aes-128-ctr aes-192-ctr aes-256-ctr
+  #   rc4-md5 chacha20-ietf xchacha20
+  #   chacha20-ietf-poly1305 xchacha20-ietf-poly1305
+  
+  # vmess
+  # cipher support auto/aes-128-gcm/chacha20-poly1305/none
+  - name: "sg3 sshkit 1-10"
+    type: vmess
+    server: 104.22.25.131
+    port: 80
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    # servername: sg3-v2ray.sshkit.org
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/630f9b9b53c0e/
+      headers:
+        Host: sg3-v2ray.sshkit.org
+    udp: true
+
+  - name: "sg1 sshkit 09-11"
+    type: vmess
+    server: 104.22.25.131
+    port: 80
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    udp: true
+    # tls: true
+    skip-cert-verify: true
+    # servername: example.com # priority over wss host
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/62f6380a55464/
+      headers:
+        Host: sg1-v2ray.sshkit.org
+        # Upgrade: websocket
+        # Connection: keep-alive
+        # max-early-data: 2048
+        # early-data-header-name: Sec-WebSocket-Protocol
+
+  # sshstores
+  - name: "sg6-sshstores-16-9"
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: b92a6fcc-b1b9-48da-be7a-459be747a570
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    # servername: sg.vmess6.xservs.xyz
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: sg.vmess6.xservs.xyz
+    udp: true
+
+  # sshocean
+  - name: sshocean-erwinzer0
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: 0d76f59e-ac16-4eb1-b556-9ef4297b5df4
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: id5.v2rayserv.com
+    network: ws
+    ws-opts:
+      path: /sshocean
+      headers:
+        Host: id5.v2rayserv.com
+    udp: true
+
+  - name: sshocean-199
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: c74133bb-0790-475a-9c22-0d94f0d277c2
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg8.v2rayserv.com
+    network: ws
+    ws-opts:
+      path: /sshocean
+      headers:
+        Host: sg8.v2rayserv.com
+    udp: true  
+    
