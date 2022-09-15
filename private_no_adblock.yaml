@@ -162,161 +162,18 @@ dns:
   #   'www.baidu.com': '114.114.114.114'
   #   '+.internal.crop.com': '10.0.0.1'
 
-proxies:
-  # Shadowsocks
-  # The supported ciphers (encryption methods):
-  #   aes-128-gcm aes-192-gcm aes-256-gcm
-  #   aes-128-cfb aes-192-cfb aes-256-cfb
-  #   aes-128-ctr aes-192-ctr aes-256-ctr
-  #   rc4-md5 chacha20-ietf xchacha20
-  #   chacha20-ietf-poly1305 xchacha20-ietf-poly1305
-  
-  # vmess
-  # cipher support auto/aes-128-gcm/chacha20-poly1305/none
-  - name: "sg3 sshkit 08-30"
-    type: vmess
-    server: 104.22.25.131
-    port: 80
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
-    alterId: 0
-    cipher: auto
-    udp: true
-    # tls: true
-    skip-cert-verify: true
-    # servername: example.com # priority over wss host
-    network: ws
-    ws-opts:
-      path: /sshkit/1678781623/62e62a261be0e/
-      headers:
-        Host: sg3-v2ray.sshkit.org
-    #   max-early-data: 2048
-    #   early-data-header-name: Sec-WebSocket-Protocol
-
-  - name: "sg1 sshkit 09-11"
-    type: vmess
-    server: 104.22.25.131
-    port: 80
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
-    alterId: 0
-    cipher: auto
-    udp: true
-    # tls: true
-    skip-cert-verify: true
-    # servername: example.com # priority over wss host
-    network: ws
-    ws-opts:
-      path: /sshkit/1678781623/62f6380a55464/
-      headers:
-        Host: sg1-v2ray.sshkit.org
-        # Upgrade: websocket
-        # Connection: keep-alive
-        # max-early-data: 2048
-        # early-data-header-name: Sec-WebSocket-Protocol        
-        
-  - name: "sg3 sshkit 08-30 xl"
-    type: vmess
-    server: 104.18.10.39
-    port: 443
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    skip-cert-verify: true
-    # servername: example.com # priority over wss host
-    network: ws
-    ws-opts:
-      path: /sshkit/1678781623/62e62a261be0e/
-      headers:
-        Host: sg3-v2ray.sshkit.org
-        # Upgrade: websocket
-        # Connection: keep-alive
-        # max-early-data: 2048
-        # early-data-header-name: Sec-WebSocket-Protocol
-  
-  - name: "sg4-sshkit 12 sep"
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
-    alterId: 0
-    cipher: auto
-    # tls: false
-    skip-cert-verify: true
-    servername: sg4-v2ray.sshkit.org
-    network: ws
-    ws-opts:
-      path: /sshkit/1678781623/62f78883cc2a8/
-      headers:
-        Host: sg4-v2ray.sshkit.org
-    udp: true
-
-  # sshstores
-  - name: "sshstore27"
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 2fc59fb7-62fa-4c56-8d20-3b111541e0e5
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: id.vmess1.xservs.xyz
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: id.vmess1.xservs.xyz
-    udp: true   
-
-  - name: "August29"
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: d59e0980-845f-46fb-925a-e11285d693cc
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sg.vmess5.xservs.xyz
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: sg.vmess5.xservs.xyz
-    udp: true
-  
-  - name: "2-september"
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: e9d69e4b-4802-45ec-983c-ae14de3c909e
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sg.vmess1.xservs.xyz
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: sg.vmess1.xservs.xyz
-    udp: true
-
-proxy-groups:
-  - name: vmess
-    type: url-test
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 300
-    proxies:
-      - "sg3 sshkit 08-30"
-      - "sg1 sshkit 09-11"
-      - "sg4-sshkit 12 sep"
-      # - "sg3 sshkit 08-30 xl"
-      - "sshstore27"
-      - "August29"
-      - "2-september"
-        
+proxy-providers:
+  proxies-vmess:
+    type: http
+    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/proxies.yaml"
+    interval: 3600
+    path: ./proxy-provider/proxies.yaml
+    health-check:
+      enable: true
+      interval: 600
+      # lazy: true
+      url: http://www.gstatic.com/generate_204  
+      
 rule-providers:
   reject:
     type: http
@@ -338,21 +195,29 @@ rule-providers:
     url: "https://raw.githubusercontent.com/lululoid/clash-config/main/porn.txt"
     path: ./ruleset/porn.yaml
     interval: 86400
+    
+proxy-groups:
+  - name: vmess
+    type: url-test
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    use:
+      - proxies-vmess
       
 rules:
-  #- RULE-SET,reject,REJECT
+  # - RULE-SET,reject,REJECT
   - RULE-SET,porn,REJECT
-  - RULE-SET,apps,vmess
+  - RULE-SET,apps,DIRECT
   - DOMAIN-SUFFIX,google.com,vmess
   - DOMAIN-KEYWORD,google,vmess
   - DOMAIN-KEYWORD,hentai,REJECT
   - DOMAIN-KEYWORD,porn,REJECT
   - DOMAIN,google.com,REJECT
-  #- DOMAIN-SUFFIX,ad.com,REJECT
+  # - DOMAIN-SUFFIX,ad.com,REJECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)
   - IP-CIDR,127.0.0.0/8,DIRECT
-  - GEOIP,CN,DIRECT
+  - GEOIP,CN,vmess
   - DST-PORT,80,vmess
   - SRC-PORT,7777,vmess
   - MATCH,vmess
