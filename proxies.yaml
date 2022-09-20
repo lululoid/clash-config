@@ -78,5 +78,5 @@ proxies:
     ws-opts:
       path: /sshocean
       headers:
-        Host: sg2.securev2ray.com
+        Host: sg2.v2rayserv.com
     udp: true
