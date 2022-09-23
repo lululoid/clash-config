@@ -118,7 +118,7 @@ proxies:
     udp: true
 
   - name: ID-fastssh-30-sept
-    server: no.no
+    server: 104.22.25.131
     port: 80
     type: vmess
     uuid: 9dc0c6aa-39a1-46be-9938-85999e3c3498
