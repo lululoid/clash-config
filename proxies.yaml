@@ -80,3 +80,20 @@ proxies:
       headers:
         Host: sg2.v2rayserv.com
     udp: true
+
+  - name: sshocean-30september
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: 8d5130bf-449f-4946-be8c-2f858596c45a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    # servername: sg8.v2rayserv.com
+    network: ws
+    ws-opts:
+      path: /sshocean
+      headers:
+        Host: sg1-ctb.v2rayserv.com
+    udp: true
