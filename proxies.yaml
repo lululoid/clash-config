@@ -98,8 +98,9 @@ proxies:
         Host: sg1-ctb.v2rayserv.com
     udp: true
     
+# FastSsh
 
-  - name: sg-atha.v2-ray.com
+  - name: fastssh-30-sept
     server: 104.22.25.131
     port: 80
     type: vmess
@@ -114,4 +115,21 @@ proxies:
       path: /fastssh/30september/632da277b456c/
       headers:
         Host: sg-atha.v2-ray.com
+    udp: true
+
+  - name: ID-fastssh-30-sept
+    server: no.no
+    port: 80
+    type: vmess
+    uuid: 9dc0c6aa-39a1-46be-9938-85999e3c3498
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: id-ikd.v2-ray.com
+    network: ws
+    ws-opts:
+      path: /fastssh/30septid/632da58ba219d/
+      headers:
+        Host: id-ikd.v2-ray.com
     udp: true
