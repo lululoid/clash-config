@@ -134,7 +134,7 @@ proxies:
         Host: id-ikd.v2-ray.com
     udp: true
   
-  - name: sg2.v2-ray.com
+  - name: 2_October
     server: 104.22.25.131
     port: 80
     type: vmess
