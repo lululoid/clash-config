@@ -10,23 +10,6 @@ proxies:
   # vmess
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
   # Sshkit
-  - name: "sg3 sshkit 1-10"
-    type: vmess
-    server: 104.22.25.131
-    port: 80
-    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    # servername: sg3-v2ray.sshkit.org
-    network: ws
-    ws-opts:
-      path: /sshkit/1678781623/630f9b9b53c0e/
-      headers:
-        Host: sg3-v2ray.sshkit.org
-    udp: true
-
   - name: sg1-sshkit-16-10
     server: 104.22.25.131
     port: 80
