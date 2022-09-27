@@ -63,6 +63,23 @@ proxies:
       headers:
         Host: sg1-ctb.v2rayserv.com
     udp: true
+
+  - name: 4October
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: ce51d164-362e-4caf-9ecf-5b0333d8229e
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    # servername: sg6.v2rayserv.com
+    network: ws
+    ws-opts:
+      path: /sshocean
+      headers:
+        Host: sg6.v2rayserv.com
+    udp: true
     
 # FastSsh
 
