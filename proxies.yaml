@@ -47,40 +47,6 @@ proxies:
   # sshstores
 
   # sshocean  
-  - name: erwinzer024-sep
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 1f9f93d7-d140-486b-9456-88df1c3fb5a9
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    # servername: sg8.v2rayserv.com
-    network: ws
-    ws-opts:
-      path: /sshocean
-      headers:
-        Host: id4.securev2ray.com
-    udp: true
-
-  - name: sshocean-erwinzer027
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 25c13231-1f81-4305-bb77-b59ac7434550
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    # servername: sg8.v2rayserv.com
-    network: ws
-    ws-opts:
-      path: /sshocean
-      headers:
-        Host: sg2.v2rayserv.com
-    udp: true
-
   - name: sshocean-30september
     server: 104.22.25.131
     port: 80
