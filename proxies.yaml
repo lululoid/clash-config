@@ -9,6 +9,58 @@ proxies:
   
   # vmess
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
+  # FastSsh
+  - name: 2_October
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: f4f7252a-7100-48e7-a2e5-b0334e845c06
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg2.v2-ray.com
+    network: ws
+    ws-opts:
+      path: /fastssh/2october/632f9dbc1e456/
+      headers:
+        Host: sg2.v2-ray.com
+    udp: true
+  
+  - name: fastssh-30-sept
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: b9296a34-8c1d-4232-b7f7-456ac8117303
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg-atha.v2-ray.com
+    network: ws
+    ws-opts:
+      path: /fastssh/30september/632da277b456c/
+      headers:
+        Host: sg-atha.v2-ray.com
+    udp: true
+
+  - name: ID-fastssh-30-sept
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: 9dc0c6aa-39a1-46be-9938-85999e3c3498
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: id-ikd.v2-ray.com
+    network: ws
+    ws-opts:
+      path: /fastssh/30septid/632da58ba219d/
+      headers:
+        Host: id-ikd.v2-ray.com
+    udp: true
+  
   # Sshkit
   - name: sg1-sshkit-16-10
     server: 104.22.25.131
@@ -79,57 +131,4 @@ proxies:
       path: /sshocean
       headers:
         Host: sg6.v2rayserv.com
-    udp: true
-    
-# FastSsh
-
-  - name: fastssh-30-sept
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: b9296a34-8c1d-4232-b7f7-456ac8117303
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sg-atha.v2-ray.com
-    network: ws
-    ws-opts:
-      path: /fastssh/30september/632da277b456c/
-      headers:
-        Host: sg-atha.v2-ray.com
-    udp: true
-
-  - name: ID-fastssh-30-sept
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 9dc0c6aa-39a1-46be-9938-85999e3c3498
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: id-ikd.v2-ray.com
-    network: ws
-    ws-opts:
-      path: /fastssh/30septid/632da58ba219d/
-      headers:
-        Host: id-ikd.v2-ray.com
-    udp: true
-  
-  - name: 2_October
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: f4f7252a-7100-48e7-a2e5-b0334e845c06
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sg2.v2-ray.com
-    network: ws
-    ws-opts:
-      path: /fastssh/2october/632f9dbc1e456/
-      headers:
-        Host: sg2.v2-ray.com
     udp: true
