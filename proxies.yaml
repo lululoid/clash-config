@@ -11,7 +11,7 @@ proxies:
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
   # FastSsh
   - name: id-lb.vhax.net
-    server: no.pe
+    server: 104.22.25.131
     port: 80
     type: vmess
     uuid: 6fea1649-425b-4092-bf53-29792152c925
