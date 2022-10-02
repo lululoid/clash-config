@@ -93,7 +93,7 @@ dns:
   default-nameserver:
     # - 114.114.114.114
     - 8.8.8.8
-    - 1.1.1.1
+    # - 1.1.1.1
     # - 94.140.14.14
     # - 94.140.15.15
   enhanced-mode: fake-ip # or redir-host (not recommended)
@@ -113,13 +113,12 @@ dns:
   nameserver:
     # - 114.114.114.114 # default value
     - 8.8.8.8 # default value
-    - 1.1.1.1
     - https://dns.google/dns-query
     # - 94.140.14.14
     # - 94.140.15.15
     # - tls://dns.adguard-dns.com
     # - tls://dns.rubyfish.cn:853 # DNS over TLS
-    - https://1.1.1.1/dns-query # DNS over HTTPS
+    # - https://1.1.1.1/dns-query # DNS over HTTPS
     # - dhcp://en0 # dns from dhcp
     # - '8.8.8.8#en0'
 
@@ -128,9 +127,8 @@ dns:
   # The answers from fallback servers are used when the GEOIP country
   # is not `CN`.
   fallback:
-    - 1.1.1.1
+    - 8.8.8.8
     - 8.8.4.4
-    - https://cloudflare-dns.com/dns-query
   # - tcp://1.1.1.1
   # - 'tcp://1.1.1.1#en0'
   # - tcp://94.140.15.15
@@ -172,22 +170,7 @@ proxy-providers:
       enable: true
       interval: 600
       # lazy: true
-      url: http://www.gstatic.com/generate_204  
-      
-rule-providers: 
-  apps:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/apps.txt"
-    path: ./ruleset/apps.yaml
-    interval: 86400
-    
-  porn:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/porn.txt"
-    path: ./ruleset/porn.yaml
-    interval: 86400
+      url: http://www.gstatic.com/generate_204
     
 proxy-groups:
   - name: vmess
@@ -198,19 +181,7 @@ proxy-groups:
       - proxies-vmess
       
 rules:
-  # - RULE-SET,reject,REJECT
-  - RULE-SET,porn,REJECT
-  - RULE-SET,apps,DIRECT
-  - DOMAIN-SUFFIX,google.com,vmess
-  - DOMAIN-KEYWORD,google,vmess
-  - DOMAIN-KEYWORD,hentai,REJECT
-  - DOMAIN-KEYWORD,porn,REJECT
-  # - DOMAIN,google.com,REJECT
-  # - DOMAIN-SUFFIX,ad.com,REJECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)
   - IP-CIDR,127.0.0.0/8,DIRECT
-  - GEOIP,CN,vmess
-  - DST-PORT,80,vmess
-  - SRC-PORT,7777,vmess
   - MATCH,vmess
