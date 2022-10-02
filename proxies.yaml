@@ -10,55 +10,21 @@ proxies:
   # vmess
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
   # FastSsh
-  - name: 2_October
-    server: 104.22.25.131
+  - name: id-lb.vhax.net
+    server: no.pe
     port: 80
     type: vmess
-    uuid: f4f7252a-7100-48e7-a2e5-b0334e845c06
+    uuid: 6fea1649-425b-4092-bf53-29792152c925
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: sg2.v2-ray.com
+    servername: id-lb.vhax.net
     network: ws
     ws-opts:
-      path: /fastssh/2october/632f9dbc1e456/
+      path: /sshkit/10October/633a0eba805b4/
       headers:
-        Host: sg2.v2-ray.com
-    udp: true
-  
-  - name: fastssh-30-sept
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: b9296a34-8c1d-4232-b7f7-456ac8117303
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sg-atha.v2-ray.com
-    network: ws
-    ws-opts:
-      path: /fastssh/30september/632da277b456c/
-      headers:
-        Host: sg-atha.v2-ray.com
-    udp: true
-
-  - name: ID-fastssh-30-sept
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 9dc0c6aa-39a1-46be-9938-85999e3c3498
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: id-ikd.v2-ray.com
-    network: ws
-    ws-opts:
-      path: /fastssh/30septid/632da58ba219d/
-      headers:
-        Host: id-ikd.v2-ray.com
+        Host: id-lb.vhax.net
     udp: true
   
   # Sshkit
@@ -98,23 +64,7 @@ proxies:
 
   # sshstores
 
-  # sshocean  
-  - name: sshocean-30september
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 8d5130bf-449f-4946-be8c-2f858596c45a
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    # servername: sg8.v2rayserv.com
-    network: ws
-    ws-opts:
-      path: /sshocean
-      headers:
-        Host: sg1-ctb.v2rayserv.com
-    udp: true
+  # sshocean
 
   - name: 4October
     server: 104.22.25.131
