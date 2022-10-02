@@ -174,14 +174,7 @@ proxy-providers:
       # lazy: true
       url: http://www.gstatic.com/generate_204  
       
-rule-providers:
-  reject:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/reject.yaml"
-    path: ./ruleset/reject.yaml
-    interval: 86400
-    
+rule-providers: 
   apps:
     type: http
     behavior: classical
@@ -212,7 +205,7 @@ rules:
   - DOMAIN-KEYWORD,google,vmess
   - DOMAIN-KEYWORD,hentai,REJECT
   - DOMAIN-KEYWORD,porn,REJECT
-  - DOMAIN,google.com,REJECT
+  # - DOMAIN,google.com,REJECT
   # - DOMAIN-SUFFIX,ad.com,REJECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)
