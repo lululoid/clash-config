@@ -130,7 +130,7 @@ dns:
   # is not `CN`.
   fallback:
     - 1.1.1.1
-    - 8.8.4.4
+    - 8.8.8.8
     - https://cloudflare-dns.com/dns-query
     - tcp://1.1.1.1
   # - 'tcp://1.1.1.1#en0'
@@ -191,7 +191,7 @@ proxy-providers:
     health-check:
       enable: true
       interval: 30
-      lazy: true
+      # lazy: true
       url: http://www.gstatic.com/generate_204  
       
 rule-providers:

@@ -93,6 +93,7 @@ dns:
   default-nameserver:
     # - 114.114.114.114
     - 8.8.8.8
+    - 8.8.4.4
     # - 1.1.1.1
     # - 94.140.14.14
     # - 94.140.15.15
@@ -113,6 +114,7 @@ dns:
   nameserver:
     # - 114.114.114.114 # default value
     - 8.8.8.8 # default value
+    - 8.8.4.4
     - https://dns.google/dns-query
     # - 94.140.14.14
     # - 94.140.15.15
@@ -169,7 +171,7 @@ proxy-providers:
     health-check:
       enable: true
       interval: 30
-      lazy: true
+      # lazy: true
       url: http://www.gstatic.com/generate_204
     
 proxy-groups:
