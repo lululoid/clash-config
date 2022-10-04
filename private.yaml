@@ -223,6 +223,13 @@ proxy-groups:
     interval: 86400
     use:
       - proxies-vmess
+
+  - name: UseProvider
+    type: select
+    use:
+      - proxies-vmess
+    proxies:
+      - DIRECT
       
 rules:
   - RULE-SET,reject,REJECT
