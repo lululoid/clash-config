@@ -182,6 +182,13 @@ proxy-groups:
     use:
       - proxies-vmess
       
+  - name: manual
+    type: select
+    use:
+      - proxies-vmess
+    proxies:
+      - DIRECT
+      
 rules:
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)

@@ -163,25 +163,6 @@ dns:
   #   'www.baidu.com': '114.114.114.114'
   #   '+.internal.crop.com': '10.0.0.1'
 
-# Proxies just for game
-proxies:
-  - name: 2_October
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: f4f7252a-7100-48e7-a2e5-b0334e845c06
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sg2.v2-ray.com
-    network: ws
-    ws-opts:
-      path: /fastssh/2october/632f9dbc1e456/
-      headers:
-        Host: sg2.v2-ray.com
-    udp: true  
-
 proxy-providers:
   proxies-vmess:
     type: http
@@ -223,6 +204,13 @@ proxy-groups:
     interval: 300
     use:
       - proxies-vmess
+      
+  - name: manual
+    type: select
+    use:
+      - proxies-vmess
+    proxies:
+      - DIRECT
       
 rules:
   - RULE-SET,reject,REJECT
