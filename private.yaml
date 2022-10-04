@@ -167,11 +167,11 @@ proxy-providers:
   proxies-vmess:
     type: http
     url: "https://raw.githubusercontent.com/lululoid/clash-config/main/proxies.yaml"
-    interval: 86400
+    interval: 3600
     path: ./proxy-provider/proxies.yaml
     health-check:
       enable: true
-      interval: 21600
+      interval: 600
       # lazy: true
       url: http://www.gstatic.com/generate_204  
       
@@ -209,8 +209,8 @@ rules:
   - RULE-SET,reject,REJECT
   - RULE-SET,porn,REJECT
   - RULE-SET,apps,DIRECT
-  - DOMAIN-SUFFIX,google.com,vmess
-  - DOMAIN-KEYWORD,google,vmess
+  - DOMAIN-SUFFIX,google.com,manual
+  - DOMAIN-KEYWORD,google,manual
   - DOMAIN-KEYWORD,hentai,REJECT
   - DOMAIN-KEYWORD,porn,REJECT
   - DOMAIN,google.com,REJECT
@@ -218,7 +218,7 @@ rules:
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)
   - IP-CIDR,127.0.0.0/8,DIRECT
-  - GEOIP,CN,vmess
-  - DST-PORT,80,vmess
-  - SRC-PORT,7777,vmess
+  - GEOIP,CN,manual
+  - DST-PORT,80,manual
+  - SRC-PORT,7777,manual
   - MATCH,manual
