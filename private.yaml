@@ -198,13 +198,6 @@ rule-providers:
     interval: 86400
     
 proxy-groups:
-  - name: vmess
-    type: url-test
-    url: 'http://www.gstatic.com/generate_204'
-    interval: 86400
-    use:
-      - proxies-vmess
-
   - name: manual
     type: select
     use:
@@ -228,4 +221,4 @@ rules:
   - GEOIP,CN,vmess
   - DST-PORT,80,vmess
   - SRC-PORT,7777,vmess
-  - MATCH,vmess
+  - MATCH,manual
