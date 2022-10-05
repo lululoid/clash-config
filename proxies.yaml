@@ -28,7 +28,7 @@ proxies:
     udp: true
 
   - name: id-herza.v2-ray.com
-    server: no.no
+    server: 104.22.25.131
     port: 80
     type: vmess
     uuid: fbf78c1f-6f42-45e0-a1a9-67de703b90f8
