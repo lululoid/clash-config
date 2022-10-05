@@ -70,7 +70,7 @@ proxies:
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: sg4-v2ray.sshkit.org
+    # servername: sg4-v2ray.sshkit.org
     network: ws
     ws-opts:
       path: /sshkit/1678781623/6332efe91b012/
@@ -81,24 +81,6 @@ proxies:
   # sshstores
 
   # sshocean
-
-  - name: 4October
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: ce51d164-362e-4caf-9ecf-5b0333d8229e
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    # servername: sg6.v2rayserv.com
-    network: ws
-    ws-opts:
-      path: /sshocean
-      headers:
-        Host: sg6.v2rayserv.com
-    udp: true
-
   - name: sshocean-9october
     server: 104.22.25.131
     port: 80
