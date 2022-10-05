@@ -26,6 +26,23 @@ proxies:
       headers:
         Host: id-lb.vhax.net
     udp: true
+
+  - name: id-herza.v2-ray.com
+    server: no.no
+    port: 80
+    type: vmess
+    uuid: fbf78c1f-6f42-45e0-a1a9-67de703b90f8
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: id-herza.v2-ray.com
+    network: ws
+    ws-opts:
+      path: /fastssh/erwinzer0/633d6bdbba1dd/
+      headers:
+        Host: id-herza.v2-ray.com
+    udp: true
   
   # Sshkit
   - name: sg3-sshkit2November
