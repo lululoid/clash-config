@@ -113,6 +113,22 @@ proxies:
     udp: true
 
   # sshstores
+  - name: erwinzer0
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: e57fa54a-d96f-49bd-b71a-a84f99e101a6
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    # servername: id.vmess1.xservs.xyz
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: id.vmess1.xservs.xyz
+    udp: true
 
   # sshocean
   - name: sshocean-9october
