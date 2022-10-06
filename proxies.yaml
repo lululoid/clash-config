@@ -10,6 +10,23 @@ proxies:
   # vmess
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
   # FastSsh
+  - name: sg3.v2-ray.com
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: fbf78c1f-6f42-45e0-a1a9-67de703b90f8
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    # servername: sg3.v2-ray.com
+    network: ws
+    ws-opts:
+      path: /fastssh/erwinzer0/633e22b539bb5/
+      headers:
+        Host: sg3.v2-ray.com
+    udp: true
+  
   - name: id-lb.vhax.net
     server: 104.22.25.131
     port: 80
