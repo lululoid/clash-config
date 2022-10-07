@@ -23,7 +23,7 @@ proxies:
     # servername: no.no
     network: ws
     ws-opts:
-      path: /opentunnel?user=opentunnel.net-unnecessary0
+      path: /u/unnecessary0
       headers:
         Host: sgv-3.openv2ray.com
     udp: true
