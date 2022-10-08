@@ -132,6 +132,23 @@ proxies:
     udp: true
 
   # sshstores
+  - name: toobad
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: 924c20ec-564b-4511-89f7-62dd0aad8684
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg.vmess3.xservs.xyz
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: sg.vmess3.xservs.xyz
+    udp: true
+  
   - name: sshocean-erwinzer0
     server: 104.22.25.131
     port: 80
