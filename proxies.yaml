@@ -11,7 +11,7 @@ proxies:
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
   
   # Opentunnel
-  - name: opentunnel.net-tset2
+  - name: opentunnel.net-tset2_ID
     server: 104.22.25.131
     port: 80
     type: vmess
