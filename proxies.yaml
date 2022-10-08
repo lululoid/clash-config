@@ -11,6 +11,23 @@ proxies:
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
   
   # Opentunnel
+  - name: opentunnel.net-sgv6
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
+    alterId: 16
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sgv-6.openv2ray.com
+    network: ws
+    ws-opts:
+      path: /u/opentunnel.net-sgv6
+      headers:
+        Host: sgv-6.openv2ray.com
+    udp: true
+  
   - name: opentunnel.net-sgv4
     server: 104.22.25.131
     port: 80
