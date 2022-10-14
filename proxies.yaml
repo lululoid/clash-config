@@ -336,6 +336,23 @@ proxies:
         Host: id.vmess2.xservs.xyz
     udp: true
 
+  - name: sgvmess3xservsxyz
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: 924c20ec-564b-4511-89f7-62dd0aad8684
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg.vmess3.xservs.xyz
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: sg.vmess3.xservs.xyz
+    udp: true
+
   # sshocean
   - name: sshocean-9october
     server: 104.22.25.131
