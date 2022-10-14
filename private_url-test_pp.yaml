@@ -207,12 +207,9 @@ proxy-groups:
       
 rules:
   - RULE-SET,reject,REJECT
-  - RULE-SET,porn,REJECT
   - RULE-SET,apps,DIRECT
   - DOMAIN-SUFFIX,google.com,manual
   - DOMAIN-KEYWORD,google,manual
-  - DOMAIN-KEYWORD,hentai,REJECT
-  - DOMAIN-KEYWORD,porn,REJECT
   - DOMAIN,google.com,REJECT
   - DOMAIN-SUFFIX,ad.com,REJECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
