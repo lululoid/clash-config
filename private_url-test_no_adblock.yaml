@@ -59,7 +59,7 @@ ipv6: true
 # interface-name: en0
 
 # fwmark on Linux only
-routing-mark: 6666
+# routing-mark: 6666
 
 # Static hosts for DNS server and connection establishment (like /etc/hosts)
 #
