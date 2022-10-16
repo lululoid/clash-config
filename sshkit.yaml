@@ -1,0 +1,51 @@
+proxies:
+  # Sshkit
+  - name: sg3-sshkit2November
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg3-v2ray.sshkit.org
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/633aa60227aa4/
+      headers:
+        Host: sg3-v2ray.sshkit.org
+    udp: true
+  - name: sg1-sshkit-16-10
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    # servername: no.no
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/632420f1d998d/
+      headers:
+        Host: sg1-v2ray.sshkit.org
+    udp: true
+
+  - name: sshkit27October
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: c6747da4-fb2e-4a2a-bdb7-8614bdd6b0b3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    # servername: sg4-v2ray.sshkit.org
+    network: ws
+    ws-opts:
+      path: /sshkit/1678781623/6332efe91b012/
+      headers:
+        Host: sg4-v2ray.sshkit.org
+    udp: true
