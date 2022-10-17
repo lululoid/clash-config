@@ -119,7 +119,7 @@ dns:
     # - 94.140.15.15
     # - tls://dns.adguard-dns.com
     # - tls://dns.rubyfish.cn:853 # DNS over TLS
-    # - https://1.1.1.1/dns-query # DNS over HTTPS
+    - https://1.1.1.1/dns-query # DNS over HTTPS
     - tls://1dot1dot1dot1.cloudflare-dns.com
     # - dhcp://en0 # dns from dhcp
     # - '8.8.8.8#en0'

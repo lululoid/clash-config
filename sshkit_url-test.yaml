@@ -202,7 +202,7 @@ proxy-groups:
     type: url-test
     use:
       - proxies-vmess
-    interval: 30
+    interval: 10
     url: 'http://www.gstatic.com/generate_204'
       
 rules:

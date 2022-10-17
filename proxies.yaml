@@ -24,7 +24,7 @@ proxies:
     servername: sgv-3.openv2ray.com
     network: ws
     ws-opts:
-      path: /opentunnel?user=opentunnel.net-sgv3opentunnel
+      path: /u/opentunnel.net-sgv3opentunnel
       headers:
         Host: sgv-3.openv2ray.com
     udp: true
