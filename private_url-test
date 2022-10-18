@@ -173,7 +173,7 @@ proxy-providers:
       enable: true
       interval: 600
       # lazy: true
-      url: http://www.gstatic.com/generate_204  
+      url: http://connect.rom.miui.com/generate_204
       
 rule-providers:
   reject:
@@ -202,8 +202,8 @@ proxy-groups:
     type: url-test
     use:
       - proxies-vmess
-    interval: 300
-    url: 'http://www.gstatic.com/generate_204'
+    interval: 30
+    url: http://connect.rom.miui.com/generate_204
       
 rules:
   - RULE-SET,reject,REJECT

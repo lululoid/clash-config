@@ -9,6 +9,23 @@ proxies:
   
   # vmess
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
+  # Akunssh
+  - name: akunssh-vmess7sg
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: 23ade47a-4e3d-11ed-b48c-1fe4fd4ae17f
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg1.vmess.tunnel.cx
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: sg1.vmess.tunnel.cx
+    udp: true
   
   # Opentunnel
   # 21 October
@@ -47,6 +64,22 @@ proxies:
     udp: true
   
   # FastSsh
+  - name: sg-ovh2.v2-ray.com
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: 2ef64dc8-ca3c-45b8-ad5f-20871452143b
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sg-ovh2.v2-ray.com
+    network: ws
+    ws-opts:
+      path: /fastssh/v2raysgovh/634e6c456445f/
+      headers:
+        Host: sg-ovh2.v2-ray.com
+    udp: true
 
   # sshstores
 
@@ -85,6 +118,40 @@ proxies:
     udp: true
 
   # sshocean
+  - name: sshocean-sg3.v2rayserv.com
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: c666da10-5b85-4074-ab13-d6fc1da75bf0
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    # servername: sg2.v2rayserv.com
+    network: ws
+    ws-opts:
+      path: /sshocean
+      headers:
+        Host: sg3.v2rayserv.com
+    udp: true  
+  
+  - name: sshocean-sg2.v2rayserv.com
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: 475a96a0-8854-43a2-ae39-06376146f0d4
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    # servername: sg2.v2rayserv.com
+    network: ws
+    ws-opts:
+      path: /sshocean
+      headers:
+        Host: sg2.v2rayserv.com
+    udp: true  
+  
   - name: sshocean-9october
     server: 104.22.25.131
     port: 80
