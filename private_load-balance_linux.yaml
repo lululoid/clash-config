@@ -59,7 +59,7 @@ ipv6: true
 # interface-name: en0
 
 # fwmark on Linux only
-# routing-mark: 6666
+routing-mark: 6666
 
 # Static hosts for DNS server and connection establishment (like /etc/hosts)
 #
@@ -119,7 +119,7 @@ dns:
     # - 94.140.15.15
     # - tls://dns.adguard-dns.com
     # - tls://dns.rubyfish.cn:853 # DNS over TLS
-    - https://1.1.1.1/dns-query # DNS over HTTPS
+    # - https://1.1.1.1/dns-query # DNS over HTTPS
     - tls://1dot1dot1dot1.cloudflare-dns.com
     # - dhcp://en0 # dns from dhcp
     # - '8.8.8.8#en0'
@@ -173,9 +173,16 @@ proxy-providers:
       enable: true
       interval: 600
       # lazy: true
-      url: http://connect.rom.miui.com/generate_204
+      url: http://hi.bonds.id/ping
       
 rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/reject.yaml"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+    
   apps:
     type: http
     behavior: classical
@@ -192,16 +199,22 @@ rule-providers:
     
 proxy-groups:
   - name: manual
-    type: url-test
+    type: load-balance
     use:
       - proxies-vmess
     interval: 30
-    url: http://connect.rom.miui.com/generate_204
+    url: http://www.gstatic.com/generate_204
       
 rules:
+  - RULE-SET,reject,REJECT
   - RULE-SET,porn,REJECT
   - RULE-SET,apps,DIRECT
+  - DOMAIN-SUFFIX,google.com,manual
+  - DOMAIN-KEYWORD,google,manual
   - DOMAIN-KEYWORD,hentai,REJECT
+  - DOMAIN-KEYWORD,porn,REJECT
+  - DOMAIN,google.com,REJECT
+  - DOMAIN-SUFFIX,ad.com,REJECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)
   - IP-CIDR,127.0.0.0/8,DIRECT

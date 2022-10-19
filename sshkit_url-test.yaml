@@ -199,11 +199,11 @@ rule-providers:
     
 proxy-groups:
   - name: manual
-    type: url-test
+    type: load-balance
     use:
       - proxies-vmess
-    interval: 10
-    url: http://hi.bonds.id/ping
+    interval: 30
+    url: http://www.gstatic.com/generate_204
       
 rules:
   - RULE-SET,reject,REJECT
