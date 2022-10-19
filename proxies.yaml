@@ -9,6 +9,23 @@ proxies:
   
   # vmess
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
+  - name: dynamic-sg2b.obfs.xyz
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: c7626ca8-c70b-4fbb-b32c-5ce871b839ec
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: no.so
+    network: ws
+    ws-opts:
+      path: /fastssh
+      headers:
+        Host: dynamic-sg2b.obfs.xyz
+    udp: true
+  
   # Akunssh
   - name: akunssh-vmess7sg
     server: 104.22.25.131
