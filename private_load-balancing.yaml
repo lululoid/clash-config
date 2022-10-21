@@ -204,7 +204,7 @@ proxy-groups:
       - proxies-vmess
     interval: 7
     url: http://www.gstatic.com/generate_204
-    # strategy: consistent-hashing #round-robin
+    strategy: round-robin #consistent-hashing
       
 rules:
   - RULE-SET,reject,REJECT

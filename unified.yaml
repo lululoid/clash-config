@@ -171,7 +171,7 @@ proxy-providers:
     path: ./proxy-provider/proxies.yaml
     health-check:
       enable: true
-      interval: 7
+      interval: 300
       # lazy: true
       url: http://connect.rom.miui.com/generate_204
 
@@ -182,7 +182,7 @@ proxy-providers:
     path: ./proxy-provider/sshkit.yaml
     health-check:
       enable: true
-      interval: 7
+      interval: 300
       # lazy: true
       url: http://hi.bonds.id/ping
       
@@ -241,15 +241,16 @@ proxy-groups:
     type: fallback
     use:
       - proxies-vmess
-    interval: 7
+    interval: 300
     url: http://www.gstatic.com/generate_204
 
   - name: auto
     type: url-test
     use:
       - proxies-vmess
-    interval: 7
+    interval: 300
     url: http://www.gstatic.com/generate_204
+    tolerance: 500
       
 rules:
   - RULE-SET,reject,REJECT
@@ -265,8 +266,8 @@ rules:
   - GEOIP,CN,select
   - DST-PORT,80,select
   - SRC-PORT,7777,select
-  # - MATCH,select
-  - MATCH,load-balance
+  - MATCH,select
+  # - MATCH,load-balance
   # - MATCH,sshkit_load-balance
   # - MATCH,sshkit-select
   # - MATCH,fallback-auto
