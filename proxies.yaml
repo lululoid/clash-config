@@ -10,22 +10,6 @@ proxies:
   # vmess
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
   # Hax.id
-  - name: dynamic-sg2b.obfs.xyz
-    server: 104.22.25.131
-    port: 443
-    type: vmess
-    uuid: 3232b8cb-ece0-4fe7-b0b8-5032a70059b0
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: dynamic-sg2b.obfs.xyz
-    network: ws
-    ws-opts:
-      path: /fastssh
-      headers:
-        Host: dynamic-sg2b.obfs.xyz
-    udp: true
   
   # Howdy
   - name: v2ray2.udpgw.com
@@ -46,58 +30,8 @@ proxies:
     udp: true
   
   # Akunssh
-  - name: akunssh-vmess7sg
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 23ade47a-4e3d-11ed-b48c-1fe4fd4ae17f
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sg1.vmess.tunnel.cx
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: sg1.vmess.tunnel.cx
-    udp: true
   
   # Opentunnel
-  # 21 October
-  - name: opentunnel.net-sgv3opentunnel
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
-    alterId: 16
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sgv-3.openv2ray.com
-    network: ws
-    ws-opts:
-      path: /u/opentunnel.net-sgv3opentunnel
-      headers:
-        Host: sgv-3.openv2ray.com
-    udp: true
-
-  - name: opentunnel.net-sgv3openv2raycom
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
-    alterId: 16
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sgv-3.openv2ray.com
-    network: ws
-    ws-opts:
-      path: /u/opentunnel.net-sgv3openv2raycom
-      headers:
-        Host: sgv-3.openv2ray.com
-    udp: true
   
   # FastSsh
   - name: dynamic-sg3b.obfs.xyz
@@ -115,40 +49,6 @@ proxies:
       path: /fastssh
       headers:
         Host: dynamic-sg3b.obfs.xyz
-    udp: true
-  
-  - name: opentunnel.net-idv1openv2raycom
-    server: 104.22.25.131
-    port: 443
-    type: vmess
-    uuid: a40d34c6-b77c-4648-9210-3e8d2f4226b5
-    alterId: 16
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: idv-1.openv2ray.com
-    network: ws
-    ws-opts:
-      path: /u/opentunnel.net-idv1openv2raycom
-      headers:
-        Host: idv-1.openv2ray.com
-    udp: true
-  
-  - name: sg2.31vpn.com
-    server: 104.22.25.131
-    port: 443
-    type: vmess
-    uuid: fbf78c1f-6f42-45e0-a1a9-67de703b90f8
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: sg2.31vpn.com
-    network: ws
-    ws-opts:
-      path: /fastssh/sgyeah/6350d60eb0967/
-      headers:
-        Host: sg2.31vpn.com
     udp: true
   
   - name: sg-ovh2.v2-ray.com
@@ -169,89 +69,3 @@ proxies:
     udp: true
 
   # sshstores
-
-  - name: idvmess1xservsxyz
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 092418d4-db76-4b9c-b980-ea13dee19a76
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: id.vmess1.xservs.xyz
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: id.vmess1.xservs.xyz
-    udp: true
-
-  - name: idvmess2xservsxyz
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 74a13bf4-2901-4dc9-bfeb-0ffcda5baff0
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: id.vmess2.xservs.xyz
-    network: ws
-    ws-opts:
-      path: /vmess
-      headers:
-        Host: id.vmess2.xservs.xyz
-    udp: true
-
-  # sshocean
-  - name: sshocean-sg3.v2rayserv.com
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: c666da10-5b85-4074-ab13-d6fc1da75bf0
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    # servername: sg2.v2rayserv.com
-    network: ws
-    ws-opts:
-      path: /sshocean
-      headers:
-        Host: sg3.v2rayserv.com
-    udp: true  
-  
-  - name: sshocean-sg2.v2rayserv.com
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 475a96a0-8854-43a2-ae39-06376146f0d4
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    # servername: sg2.v2rayserv.com
-    network: ws
-    ws-opts:
-      path: /sshocean
-      headers:
-        Host: sg2.v2rayserv.com
-    udp: true  
-  
-  - name: sshocean-9october
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 781be00e-1e09-4e27-a464-e14197418c8f
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    # servername: sg6.v2rayserv.com
-    network: ws
-    ws-opts:
-      path: /sshocean
-      headers:
-        Host: id5.v2rayserv.com
-    udp: true  
