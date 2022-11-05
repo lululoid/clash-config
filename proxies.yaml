@@ -10,8 +10,41 @@ proxies:
   # vmess
   # cipher support auto/aes-128-gcm/chacha20-poly1305/none
   # Hax.id
+  - name: sg1.31vpn.com
+    server: 104.22.25.131
+    port: 443
+    type: vmess
+    uuid: e715caca-c520-4388-bfc0-09707170867a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: sg1.31vpn.com
+    network: ws
+    ws-opts:
+      path: /fastssh/erwin1/635bcd034781b/
+      headers:
+        Host: sg1.31vpn.com
+    udp: true
   
   # Howdy
+  - name: v2ray1.udpgw.com
+    server: 104.22.25.131
+    port: 443
+    type: vmess
+    uuid: ab381e7b-e114-44dc-9a76-7467205a8397
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: v2ray1.udpgw.com
+    network: ws
+    ws-opts:
+      path: /howdy
+      headers:
+        Host: v2ray1.udpgw.com
+    udp: true
+  
   - name: v2ray2.udpgw.com
     server: 104.22.25.131
     port: 443
@@ -34,38 +67,5 @@ proxies:
   # Opentunnel
   
   # FastSsh
-  - name: dynamic-sg3b.obfs.xyz
-    server: 104.22.25.131
-    port: 443
-    type: vmess
-    uuid: 290cece3-82f8-4fab-8f08-e120a6a89fd5
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: dynamic-sg3b.obfs.xyz
-    network: ws
-    ws-opts:
-      path: /fastssh
-      headers:
-        Host: dynamic-sg3b.obfs.xyz
-    udp: true
-  
-  - name: sg-ovh2.v2-ray.com
-    server: 104.22.25.131
-    port: 80
-    type: vmess
-    uuid: 2ef64dc8-ca3c-45b8-ad5f-20871452143b
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: sg-ovh2.v2-ray.com
-    network: ws
-    ws-opts:
-      path: /fastssh/v2raysgovh/634e6c456445f/
-      headers:
-        Host: sg-ovh2.v2-ray.com
-    udp: true
 
   # sshstores
