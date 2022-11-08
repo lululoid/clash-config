@@ -71,6 +71,23 @@ proxies:
     server: 104.22.25.131
     port: 443
     type: vmess
+    uuid: a2e104a9-2cd7-4259-8e3f-3d5f5c554ea6
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: dynamic-sg2b.obfs.xyz
+    network: ws
+    ws-opts:
+      path: /fastssh
+      headers:
+        Host: dynamic-sg2b.obfs.xyz
+    udp: true
+  
+  - name: dynamic-sg2b.obfs.xyz
+    server: 104.22.25.131
+    port: 443
+    type: vmess
     uuid: 36b95f87-93ab-44d3-a6d0-09aa2847ccc9
     alterId: 0
     cipher: auto
