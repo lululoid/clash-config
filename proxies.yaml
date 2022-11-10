@@ -67,7 +67,7 @@ proxies:
   # Opentunnel
   
   # FastSsh
-  - name: dynamic-sg2b.obfs.xyz
+  - name: dynamic-sg2b.obfs.xyz-new
     server: 104.22.25.131
     port: 443
     type: vmess
