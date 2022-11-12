@@ -194,13 +194,6 @@ rule-providers:
     path: ./ruleset/reject.yaml
     interval: 86400
     
-  apps:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/apps.txt"
-    path: ./ruleset/apps.yaml
-    interval: 86400
-    
   porn:
     type: http
     behavior: domain
@@ -255,12 +248,20 @@ proxy-groups:
 rules:
   - RULE-SET,reject,REJECT
   - RULE-SET,porn,REJECT
-  - RULE-SET,apps,DIRECT
   - DOMAIN-KEYWORD,hentai,REJECT
   - DOMAIN-KEYWORD,porn,REJECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)
   - IP-CIDR,127.0.0.0/8,DIRECT
+  - GEOIP,CN,select
+  - DST-PORT,80,select
+  - SRC-PORT,7777,select
+  - MATCH,select
+  # - MATCH,load-balance
+  # - MATCH,sshkit_load-balance
+  # - MATCH,sshkit-select
+  # - MATCH,fallback-auto
+  # - MATCH,autoECT
   - GEOIP,CN,select
   - DST-PORT,80,select
   - SRC-PORT,7777,select
