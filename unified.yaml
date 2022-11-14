@@ -261,13 +261,4 @@ rules:
   # - MATCH,sshkit_load-balance
   # - MATCH,sshkit-select
   # - MATCH,fallback-auto
-  # - MATCH,autoECT
-  - GEOIP,CN,select
-  - DST-PORT,80,select
-  - SRC-PORT,7777,select
-  - MATCH,select
-  # - MATCH,load-balance
-  # - MATCH,sshkit_load-balance
-  # - MATCH,sshkit-select
-  # - MATCH,fallback-auto
   # - MATCH,auto

@@ -12,7 +12,40 @@ proxies:
   # Hax.id
   # Howdy
   
-  # Akunssh
+  - name: v2ray1.konekto.my.id_c2f40470-2584-b866-c487-35f4938eeb91
+    server: 104.22.25.131
+    port: 443
+    type: vmess
+    uuid: c2f40470-2584-b866-c487-35f4938eeb91
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: v2ray1.konekto.my.id
+    network: ws
+    ws-opts:
+      path: /erwinzer0vws
+      headers:
+        Host: v2ray1.konekto.my.id
+    udp: true
+  
+  # sshocean
+  - name: sshocean-erwinzer0
+    server: 104.22.25.131
+    port: 80
+    type: vmess
+    uuid: dfc0963c-9644-42f2-ac36-14979fa57b1c
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: id1.v2rayserv.com
+    network: ws
+    ws-opts:
+      path: /sshocean
+      headers:
+        Host: id1.v2rayserv.com
+    udp: true
   
   # Opentunnel
   - name: opentunnel.net-12345
