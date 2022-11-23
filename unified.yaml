@@ -190,16 +190,16 @@ rule-providers:
   reject:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/reject.yaml"
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
     path: ./ruleset/reject.yaml
     interval: 86400
     
-  porn:
-    type: http
-    behavior: domain
-    url: "https://raw.githubusercontent.com/lululoid/clash-config/main/porn.txt"
-    path: ./ruleset/porn.yaml
-    interval: 86400
+  # porn:
+  #   type: http
+  #   behavior: domain
+  #   url: "https://raw.githubusercontent.com/lululoid/clash-config/main/porn.txt"
+  #   path: ./ruleset/porn.yaml
+  #  interval: 86400
     
 proxy-groups:
   - name: sshkit-select
@@ -247,9 +247,9 @@ proxy-groups:
       
 rules:
   - RULE-SET,reject,REJECT
-  - RULE-SET,porn,REJECT
-  - DOMAIN-KEYWORD,hentai,REJECT
-  - DOMAIN-KEYWORD,porn,REJECT
+  # - RULE-SET,porn,REJECT
+  # - DOMAIN-KEYWORD,hentai,REJECT
+  # - DOMAIN-KEYWORD,porn,REJECT
   - SRC-IP-CIDR,192.168.1.201/32,DIRECT
   # optional param "no-resolve" for IP rules (GEOIP, IP-CIDR, IP-CIDR6)
   - IP-CIDR,127.0.0.0/8,DIRECT
